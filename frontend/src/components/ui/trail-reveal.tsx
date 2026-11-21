@@ -24,32 +24,39 @@ const smoothstep = (a: number, b: number, x: number) => {
 function FrontPage() {
   return (
     <div className="tr-page tr-front">
+      <div className="tr-stamp-red" aria-hidden="true">Case No. 4471</div>
       <header className="tr-mast">
-        <span className="tr-masthead">The Daily Ledger</span>
-        <span className="tr-dateline">Tuesday, 21 November 2026</span>
+        <span className="tr-masthead">The Northgate Courier</span>
+        <span className="tr-dateline">Tue 21 Nov 2026 · Crime &amp; City · 25¢</span>
       </header>
       <div className="tr-rule" />
-      <h3 className="tr-headline">Council Slams Reckless Transit Plan as Businesses Face Ruin</h3>
+      <p className="tr-kicker">Exclusive — Commuters Left Footing the Bill</p>
+      <h3 className="tr-headline">Congestion Charge Chokes Manhattan as Drivers Pay and Small Firms Brace</h3>
       <div className="tr-byline">
-        <span>By Staff Reporter</span>
-        <span>6 min read</span>
+        <span>By our Crime &amp; City Desk</span>
+        <span>Council silent</span>
       </div>
       <div className="tr-cols">
         <figure className="tr-figure">
-          <div className="tr-photo" />
-          <figcaption>Commuters wait at Central Station</figcaption>
+          <div className="tr-photo">
+            <img src="/photos/holland-tunnel-1973.jpg" alt="Trucks and cars crowding a Canal Street intersection near the Holland Tunnel, 1973" loading="eager" decoding="async" />
+            <span className="tr-tag">Exhibit A</span>
+          </div>
+          <figcaption>Trucks jam Canal St. near the Holland Tunnel, 1973. Photo: Wil Blanche / U.S. National Archives (public domain)</figcaption>
         </figure>
         <p>
-          City council members slammed a reckless new transit plan on Tuesday, warning it will devastate
-          local businesses along the proposed routes.
+          Drivers heading into Manhattan&apos;s core now pay a $9 peak-hour charge to sit in the same
+          traffic, and critics say outer-borough commuters with few transit options are paying the most.
+          Small-business owners warn that deliveries and customers will simply go elsewhere.
         </p>
         <p>
-          The plan adds 12 bus routes and would cost $40 million over five years. Everyone knows
-          commuters will suffer, and officials have offered no evidence the plan works.
+          Opponents, including officials across the river in New Jersey, have fought the plan in court,
+          calling it a cash grab dressed up as clean-air policy. The relief promised to riders, they say,
+          is unproven.
         </p>
         <p className="tr-sm-hide">
-          Critics call the proposal a desperate gamble. The mayor&apos;s office declined to comment,
-          leaving residents to fear the worst.
+          No one can say how long the charge will stay at nine dollars. Questions about where every dollar
+          goes remain unanswered.
         </p>
       </div>
     </div>
@@ -60,46 +67,36 @@ function BackPage() {
   return (
     <div className="tr-page tr-back">
       <header className="tr-mast">
-        <span className="tr-masthead">Second perspective</span>
-        <span className="tr-dateline">Same story · spin set aside</span>
+        <span className="tr-masthead">The Northgate Dispatch</span>
+        <span className="tr-dateline">A brighter reading · same story</span>
       </header>
       <div className="tr-rule" />
-      <h3 className="tr-headline">
-        City council debates a $40 million, 12-route bus expansion
-      </h3>
+      <p className="tr-kicker">Early figures, fresh air</p>
+      <h3 className="tr-headline">Manhattan Breathes Easier as Traffic Thins and Transit Gets a Boost</h3>
       <div className="tr-byline">
-        <span>Neutral rewrite</span>
-        <span>6 phrases set aside</span>
+        <span>The other side of the charge</span>
+        <span>Reviews still ongoing</span>
       </div>
       <div className="tr-cols">
-        <div className="tr-block">
-          <h4>What the reporting supports</h4>
-          <p>
-            Council members criticized the plan on Tuesday, saying it could affect local businesses. The
-            plan adds 12 bus routes and would cost $40 million over five years.
-          </p>
-        </div>
-        <div className="tr-block">
-          <h4>Phrases set aside</h4>
-          <ul className="tr-swaps">
-            <li><s>slammed a reckless</s> <b>criticized a</b></li>
-            <li><s>will devastate</s> <b>could affect</b></li>
-            <li><s>everyone knows</s> <b>some say</b></li>
-            <li><s>no evidence</s> <b>no data yet</b></li>
-          </ul>
-        </div>
-        <div className="tr-block">
-          <h4>What may be missing</h4>
-          <ul className="tr-q">
-            <li>How was the $40 million figure calculated?</li>
-            <li>Is there ridership data supporting or contradicting the plan?</li>
-            <li>What does the mayor&apos;s office say?</li>
-          </ul>
-        </div>
-        <p className="tr-foot">
-          Sample data · AI-assisted rewrite · every claim should link to its source. Flags describe wording,
-          not truth.
+        <figure className="tr-figure">
+          <img className="tr-art" src="/photos/fifth-avenue-bus-lane.jpg" alt="A cyclist rides in a red bus lane on Fifth Avenue in Manhattan as pedestrians walk beneath trees" loading="eager" decoding="async" />
+          <figcaption>A dedicated bus lane on Fifth Avenue, 2018. Photo: Tdorante10, CC BY-SA 4.0</figcaption>
+        </figure>
+        <p>
+          Since the charge began in January 2025, early transit-agency figures point to noticeably fewer
+          vehicles entering the zone, and riders on several bus routes report quicker trips. The money is
+          earmarked for subway and bus upgrades, the first time many riders will see it come back to them.
         </p>
+        <ul className="tr-stats">
+          <li><b>≈ −10%</b> vehicles entering the zone</li>
+          <li><b>$9</b> peak charge for cars</li>
+          <li><b>100%</b> of net revenue to transit</li>
+        </ul>
+        <p className="tr-sm-hide">
+          Some drivers and shop owners still say the cost is real, and legal challenges continue. Both
+          sides agree on one thing: the results should be public.
+        </p>
+        <p className="tr-foot">Paraphrased summaries of public debate · not real newspaper text · verify figures</p>
       </div>
     </div>
   );
@@ -132,55 +129,189 @@ const css = `
 .tr-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
 
 .tr-page {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   padding: 2.2rem 2.6rem;
-  font-family: "Playfair Display", Georgia, serif;
-  line-height: 1.7;
+  line-height: 1.65;
   clip-path: polygon(0 0.6%, 8% 0, 17% 0.7%, 30% 0.1%, 44% 0.8%, 58% 0, 72% 0.7%, 86% 0.1%, 100% 0.6%, 99.6% 30%, 100% 62%, 99.5% 100%, 90% 99.4%, 76% 100%, 62% 99.3%, 48% 100%, 33% 99.4%, 19% 100%, 8% 99.3%, 0 100%, 0.4% 64%, 0 33%);
 }
+
+/* ---------- upper layer: yellowed, dreadful, crime-file ---------- */
 .tr-front {
-  color: #17130d;
-  background-color: #f0e8d4;
+  color: #1b1208;
+  font-family: "Special Elite", "Courier New", monospace;
+  background-color: #c9ad5e;
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.28  0 0 0 0 0.15  0 0 0 0.16 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>"),
-    linear-gradient(115deg, rgba(255,255,255,0.35), rgba(0,0,0,0.06) 70%);
+    radial-gradient(ellipse 45% 30% at 12% 8%, rgba(110, 60, 10, 0.4), transparent 70%),
+    radial-gradient(ellipse 30% 22% at 90% 96%, rgba(90, 45, 5, 0.45), transparent 70%),
+    radial-gradient(circle at 80% 70%, transparent 0 2.1rem, rgba(100, 55, 10, 0.4) 2.15rem 2.45rem, transparent 2.55rem),
+    radial-gradient(ellipse at 50% 50%, transparent 38%, rgba(50, 25, 3, 0.62) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3  0 0 0 0 0.18  0 0 0 0 0.04  0 0 0 0.42 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"),
+    linear-gradient(165deg, #dcc275, #b8964a);
 }
+.tr-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0 1px, transparent 1px 3px);
+  mix-blend-mode: multiply;
+}
+.tr-front .tr-masthead {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #120a03;
+}
+.tr-front .tr-dateline { color: #3a2610; opacity: 0.85; }
+.tr-front .tr-rule { border-color: #2a1a08; opacity: 0.9; }
+.tr-front .tr-kicker {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  background: #1b1208;
+  color: #e8d48f;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.tr-front .tr-headline {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  font-size: clamp(1.5rem, 3.8vw, 2.7rem);
+  color: #120a03;
+  text-shadow: 1px 1px 0 rgba(255, 230, 150, 0.25);
+}
+.tr-front .tr-byline { color: #3a2610; border-color: #2a1a08; }
+.tr-front .tr-cols p { text-align: left; color: #1b1208; }
+.tr-front .tr-photo {
+  position: relative;
+  border: 3px solid #1b1208;
+  background: #3a2a0c;
+  overflow: hidden;
+  -webkit-mask-image: none;
+  mask-image: none;
+  box-shadow: inset 0 0 2.2rem rgba(0,0,0,0.65);
+}
+.tr-front .tr-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 55%;
+  filter: sepia(1) saturate(0.8) contrast(1.25) brightness(0.95);
+  mix-blend-mode: multiply;
+}
+.tr-front .tr-photo { box-shadow: inset 0 0 3rem rgba(10,5,0,0.85); }
+.tr-front .tr-photo::after {
+  content: "";
+  position: absolute;
+  left: 52%; top: 28%;
+  width: 3.4rem; height: 3.4rem;
+  border: 3px solid #b3261e;
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+.tr-tag {
+  position: absolute;
+  left: 0.5rem; top: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  background: #efe0a6;
+  color: #1b1208;
+  border: 1px solid #1b1208;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+.tr-stamp-red {
+  position: absolute;
+  right: 1.6rem;
+  top: 5.6rem;
+  z-index: 3;
+  padding: 0.2rem 0.8rem;
+  border: 3px solid #a31f17;
+  color: #a31f17;
+  font-size: clamp(0.8rem, 1.6vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: rotate(7deg);
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+}
+.tr-front .tr-figure figcaption { color: #3a2610; opacity: 0.9; }
+
+/* ---------- lower layer: bright, hopeful ---------- */
 .tr-back {
-  color: #10211e;
-  background-color: #e6f4f1;
+  color: #14304a;
+  font-family: "Playfair Display", Georgia, serif;
+  background-color: #fffbe8;
   background-image:
-    linear-gradient(rgba(10,124,111,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10,124,111,0.07) 1px, transparent 1px),
-    radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.8), transparent 60%);
-  background-size: 28px 28px, 28px 28px, auto;
+    radial-gradient(circle at 92% 4%, rgba(255, 207, 74, 0.85), transparent 42%),
+    radial-gradient(ellipse at 8% 100%, rgba(120, 220, 190, 0.45), transparent 55%),
+    linear-gradient(180deg, #fffef6 0%, #fff6cf 60%, #e4f7ef 100%);
 }
+.tr-back .tr-masthead {
+  font-style: italic;
+  font-weight: 800;
+  color: #0b8a72;
+  font-size: clamp(1.4rem, 3.4vw, 2.3rem);
+}
+.tr-back .tr-dateline { color: #14304a; opacity: 0.65; }
+.tr-back .tr-rule { border-color: #0b8a72; opacity: 0.55; }
+.tr-back .tr-kicker {
+  display: inline-block;
+  padding: 0.12rem 0.7rem;
+  border-radius: 999px;
+  background: #ffd75a;
+  color: #4a3600;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.tr-back .tr-headline { font-weight: 900; color: #0f2c47; font-size: clamp(1.5rem, 3.8vw, 2.7rem); line-height: 1.1; }
+.tr-back .tr-byline { color: #14304a; border-color: rgba(11,138,114,0.45); opacity: 0.8; }
+.tr-back .tr-cols p { text-align: left; color: #1d3d57; }
+.tr-art { display: block; width: 100%; height: 11rem; object-fit: cover; object-position: 50% 62%; border-radius: 0.6rem; box-shadow: 0 0.4rem 1rem rgba(20,48,74,0.18); filter: saturate(1.2) brightness(1.08) contrast(1.02); }
+.tr-back .tr-figure figcaption { color: #14304a; opacity: 0.7; }
+.tr-stats { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; break-inside: avoid-column; }
+.tr-stats li {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #d9f4e8;
+  color: #0b5e4e;
+  font-family: "Special Elite", "Courier New", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+.tr-stats b { font-family: "Playfair Display", Georgia, serif; font-size: 1rem; margin-right: 0.25rem; }
+.tr-back .tr-foot { color: rgba(20,48,74,0.5); }
 
+/* ---------- shared ---------- */
 .tr-mast { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; line-height: 1.2; }
-.tr-masthead { font-style: italic; font-weight: 800; font-size: clamp(1.4rem, 3.4vw, 2.3rem); letter-spacing: -0.01em; }
-.tr-back .tr-masthead { font-style: normal; font-family: "Special Elite", "Courier New", monospace; font-weight: 400; color: #0a7c6f; text-transform: uppercase; letter-spacing: 0.06em; }
-.tr-dateline { font-family: "Special Elite", "Courier New", monospace; font-size: clamp(0.62rem, 1.3vw, 0.8rem); letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; text-align: right; }
-.tr-rule { height: 0.28rem; margin: 0.8rem 0 1.2rem; border-top: 2px solid currentColor; border-bottom: 1px solid currentColor; opacity: 0.8; }
-.tr-headline { font-weight: 900; font-size: clamp(1.6rem, 4.2vw, 3rem); line-height: 1.12; letter-spacing: -0.02em; }
-.tr-byline { display: flex; justify-content: space-between; gap: 1rem; margin: 0.9rem 0 1.2rem; padding-bottom: 0.7rem; border-bottom: 1px solid currentColor; font-family: "Special Elite", "Courier New", monospace; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; }
-.tr-cols { column-count: 2; column-gap: 2.4rem; font-size: clamp(0.9rem, 1.45vw, 1.04rem); }
-.tr-cols p, .tr-block { margin: 0 0 1rem; break-inside: avoid-column; }
-.tr-cols p { text-align: justify; hyphens: auto; }
+.tr-dateline { font-family: "Special Elite", "Courier New", monospace; font-size: clamp(0.58rem, 1.2vw, 0.76rem); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; }
+.tr-rule { height: 0.28rem; margin: 0.8rem 0 1.1rem; border-top: 2px solid currentColor; border-bottom: 1px solid currentColor; }
+.tr-byline { display: flex; justify-content: space-between; gap: 1rem; margin: 0.9rem 0 1.2rem; padding-bottom: 0.7rem; border-bottom: 1px solid currentColor; font-family: "Special Elite", "Courier New", monospace; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.tr-cols { column-count: 2; column-gap: 2.4rem; font-size: clamp(0.86rem, 1.35vw, 1rem); }
+.tr-cols p { margin: 0 0 1rem; break-inside: avoid-column; }
 .tr-figure { margin: 0 0 1rem; break-inside: avoid-column; }
-.tr-photo { height: 8.5rem; border: 2px solid currentColor; background: radial-gradient(circle at 50% 50%, rgba(23,19,13,0.85) 30%, transparent 33%) 0 0 / 7px 7px, #cfc8b6; -webkit-mask-image: radial-gradient(ellipse 90% 90% at 40% 45%, #000 20%, rgba(0,0,0,0.3) 85%); mask-image: radial-gradient(ellipse 90% 90% at 40% 45%, #000 20%, rgba(0,0,0,0.3) 85%); }
-.tr-figure figcaption { margin-top: 0.4rem; font-family: "Special Elite", "Courier New", monospace; font-size: 0.72rem; opacity: 0.7; }
-@media (max-width: 760px) { .tr-cols { column-count: 1; } .tr-page { padding: 1.4rem 1.2rem; } .tr-sm-hide { display: none; } .tr-photo { height: 5rem; } }
-
-.tr-block h4 { font-family: "Special Elite", "Courier New", monospace; font-weight: 400; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #0a7c6f; margin-bottom: 0.35rem; }
-.tr-block p { margin: 0; text-align: left; color: rgba(16,33,30,0.88); }
-.tr-swaps, .tr-q { list-style: none; display: grid; gap: 0.3rem; color: rgba(16,33,30,0.88); }
-.tr-swaps li { display: flex; gap: 0.7rem; align-items: baseline; flex-wrap: wrap; }
-.tr-swaps s { color: #c0392b; text-decoration-thickness: 2px; }
-.tr-swaps b { color: #0a7c4a; font-weight: 700; }
-.tr-swaps b::before { content: "→ "; color: rgba(16,33,30,0.45); }
-.tr-q li::before { content: "? "; color: #0a7c6f; font-weight: 700; }
-.tr-foot { font-family: "Special Elite", "Courier New", monospace; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(16,33,30,0.5); text-align: left !important; line-height: 1.5; }
+.tr-photo { height: 11rem; }
+.tr-figure figcaption { margin-top: 0.4rem; font-family: "Special Elite", "Courier New", monospace; font-size: 0.7rem; line-height: 1.3; }
+.tr-foot { font-family: "Special Elite", "Courier New", monospace; font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.5; text-align: left !important; }
+@media (max-width: 760px) { .tr-cols { column-count: 1; } .tr-page { padding: 1.4rem 1.2rem; } .tr-sm-hide { display: none; } .tr-photo, .tr-art { height: 5.5rem; } .tr-stamp-red { top: 4.6rem; } }
 
 .tr-hint {
   position: absolute; left: 50%; top: 52%; z-index: 5; transform: translate(-50%, -50%);
@@ -362,11 +493,11 @@ export default function TrailReveal() {
       <div className="tr-intro">
         <p className="tr-eyebrow">Two ways to read one story</p>
         <h2 className="tr-title">
-          Same article. <em>Without the spin.</em>
+          Same story. <em>Other side.</em>
         </h2>
         <p className="tr-sub">
-          Move your cursor over the front page. Where it is, and has just been, the story is rewritten the way it
-          would read without loaded words, unsupported claims or fear.
+          Move your cursor over the front page. Wherever it goes, the same story is told from the other side:
+          still sourced, but without the dread.
         </p>
       </div>
 
@@ -407,7 +538,7 @@ export default function TrailReveal() {
           </foreignObject>
         </svg>
         <div className="tr-hint" data-hidden={touched} aria-hidden="true">
-          Move across the page to rewrite it
+          Move across the page to see the other side
         </div>
       </div>
 
